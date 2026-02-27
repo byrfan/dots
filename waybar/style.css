@@ -1,0 +1,169 @@
+* {
+  font-family: Adwaita Mono;
+  font-size: 20px;
+  min-height: 0px;
+  margin-bottom: 0;
+  margin-top: 0;
+  border: none;
+}
+
+#waybar {
+  background: transparent;
+  color: #ffffff;
+}
+
+.modules-right {
+    background-color: rgba(43, 48, 59, 0.5);
+    border-radius: 0px 0px 0px 8px;
+}
+#workspaces {
+  border-radius: 0px 0px 8px 0px;
+  background-color: rgba(43, 48, 59, 0.5);;
+}
+
+#workspaces button {
+  margin: 0;
+  color: #ffffff;
+  border-radius: 0px 0px 8px 0px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+#workspaces button.active {
+  color: #c7c7c7;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+button {
+  background: transparent;
+}
+
+#clock {
+    background-color: rgba(43, 48, 59, 0.5);
+}
+
+/* Common styles for modules */
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#custom-lock,
+#custom-power,
+#custom-weather,
+#custom-uptime,
+#custom-docker {
+  padding: 0px 1rem 0px 1rem;  /* top:5px, right:10px, bottom:3px, left:8px */
+  /* Remove all margins to eliminate gaps */
+}
+
+/* Keep rounded corners only at the ends of the block */
+#pulseaudio {
+  border-radius: 5px 0 0 5px;
+}
+
+#custom-power {
+  margin-right: 1rem;
+  border-radius: 0 5px 5px 0;
+  color: #ffffff;
+  font-size: 26px;
+}
+
+/* Keep other modules with their original styling */
+#clock {
+  color: #ffffff;
+  border-radius: 0px 0px 8px 8px;
+}
+
+#custom-weather {
+  color: #ffffff;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+}
+
+#battery {
+  color: #ffffff;
+}
+
+#battery.charging {
+  color: #ffffff;
+}
+
+#battery.warning:not(.charging) {
+  color: #ffffff;
+}
+
+#backlight {
+  color: #ffffff;
+}
+
+/* Remove any remaining borders that might create visual separation */
+#backlight,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio {
+  border: none;
+  box-shadow: none;
+}
+
+#custom-docker {
+  color: #ffffff;
+}
+
+#custom-music {
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+#custom-lock {
+  color: #ffffff;
+}
+
+#custom-docker.docker {
+  color: #ffffff;
+}
+
+#custom-docker.docker-none {
+  color: #ffffff;
+}
+
+#custom-docker.docker-error {
+  color: #ffffff;
+}
+
+#custom-weather.clear {
+  color: #ffffff;
+}
+
+#custom-weather.cloud {
+  color: #ffffff;
+}
+
+#custom-weather.rain {
+  color: #ffffff;
+}
+
+#custom-weather.snow {
+  color: #ffffff;
+}
+
+#custom-weather.thunder {
+  color: #ffffff;
+}
+
+#custom-weather.fog {
+  color: #ffffff;
+}
+
+#custom-weather.error {
+  color: #ffffff;
+}

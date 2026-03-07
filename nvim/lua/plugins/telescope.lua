@@ -7,10 +7,32 @@ return {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
   },
   config = function()
-    require('telescope').setup({
+    telescope = require('telescope').setup({
       extensions = {
         fzf = {}
       }
+    })
+    
+    local telescope = require("telescope")
+
+    telescope.setup({
+      defaults = {
+        layout_strategy = "vertical",
+        layout_config = {
+          vertical = {
+            width = 0.9,
+            height = 0.95,
+            -- This gives the preview 70% of the screen at the TOP
+            preview_height = 0.7, 
+            -- Puts the prompt at the bottom
+            prompt_position = "bottom",
+            -- Keeps preview at the top and results in the middle
+            mirror = false, 
+          },
+        },
+        -- Use 'descending' so the best match is right above your prompt
+        sorting_strategy = "descending", 
+      },
     })
 
     require('telescope').load_extension('fzf')
@@ -23,9 +45,12 @@ return {
       
       -- Find open buffers
       vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Find Buffers" })
-      
+  
       -- Look through your help tags
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Help Tags" })
+
+      -- Add this inside your Telescope config function
+      vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = "View Jumplist" })
     end
   }
 }

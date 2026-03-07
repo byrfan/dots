@@ -23,4 +23,22 @@ return {
       },
     },
   },
+  {
+    "stevearc/dressing.nvim",
+        opts = {
+          input = {
+            enabled = true,
+            default_prompt = "➤ ", -- A clean fallback icon
+            title_pos = "center",
+            insert_only = false,
+            start_in_insert = true,
+            -- This is where we define the look
+            relative = "editor",
+            prefer_width = 40,
+            win_options = {
+              winblend = 10, -- Slight transparency for that modern look
+          },
+        },
+      },
+    },
 }

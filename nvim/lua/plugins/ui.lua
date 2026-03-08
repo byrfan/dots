@@ -38,7 +38,35 @@ return {
             win_options = {
               winblend = 10, -- Slight transparency for that modern look
           },
-        },
       },
     },
+  },
+  {
+    "stevearc/oil.nvim",
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+      opts = {
+        -- Use a floating window instead of a buffer
+        float = {
+          padding = 2,
+          max_width = 90,
+          max_height = 0,
+          border = "rounded", -- Options: "single", "double", "shadow", "curved"
+          win_options = {
+            winblend = 0,
+          },
+          -- This is the default focus behavior
+          -- preview_split: 'auto', 'right', 'left', 'above', 'below'
+          preview_split = "auto",
+        },
+        -- Configuration for the appearance and behavior
+        view_options = {
+          show_hidden = true,
+        },
+      },
+      keys = {
+        -- Setting this to open specifically as a float
+        { "<Leader>o", "<CMD>Oil --float<CR>", desc = "Open oil in a floating window" },
+      },
+  }
 }
+

@@ -46,6 +46,13 @@ return {
       dependencies = { "nvim-tree/nvim-web-devicons" },
       opts = {
         -- Use a floating window instead of a buffer
+        skip_confirm_for_simple_edits = true,
+        --
+        --
+        --confirmation = {
+            --disable_confirm_for_groups = { "all" },
+        --},
+        --
         float = {
           padding = 2,
           max_width = 90,

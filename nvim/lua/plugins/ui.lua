@@ -44,6 +44,7 @@ return {
   {
     "stevearc/oil.nvim",
       dependencies = { "nvim-tree/nvim-web-devicons" },
+      cmd = {"Oil"},
       opts = {
         -- Use a floating window instead of a buffer
         skip_confirm_for_simple_edits = true,
@@ -72,8 +73,40 @@ return {
       },
       keys = {
         -- Setting this to open specifically as a float
-        { "<Leader>o", "<CMD>Oil --float<CR>", desc = "Open oil in a floating window" },
-      },
-  }
+      { "<Leader>o", "<CMD>Oil --float<CR>", desc = "Open oil in a floating window" },
+      }
+  },
+  {
+    'goolord/alpha-nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      local alpha = require('alpha')
+      local dashboard = require('alpha.themes.dashboard')
+      local logo = require("logos")
+
+      dashboard.section.header.val = logo
+      dashboard.section.header.opts.hl = "Function"
+
+      -- 2. The Menu (Buttons)
+      dashboard.section.buttons.val = {
+        dashboard.button("f", "  Find File", ":Telescope find_files<CR>"),
+        dashboard.button("o", "  Open Oil", "<CMD>Oil --float <CR>"),
+        dashboard.button("c", "  Config", ":e $MYVIMRC<CR>"),
+        dashboard.button("q", "  Quit", ":qa<CR>"),
+      }
+
+      -- 3. The Centering & Layout
+      -- Alpha uses "padding" elements to create space
+      dashboard.config.layout = {
+        { type = "padding", val = 4 }, -- Space at the very top
+        dashboard.section.header,
+        { type = "padding", val = 2 }, -- Space between tree and menu
+        dashboard.section.buttons,
+        dashboard.section.footer,
+      }
+
+      alpha.setup(dashboard.opts)
+    end
+  },
 }
 

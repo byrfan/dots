@@ -3,7 +3,7 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      ensure_installed = { "clangd", "lua-language-server", "asm-lsp", "pyright" }
+      ensure_installed = { "clangd", "lua-language-server", "asm-lsp", "pyright", "rust-analyzer" }
     },
   },
 
@@ -40,7 +40,7 @@ return {
       vim.lsp.config.pyright = { cmd = { "pyright-langserver", "--stdio" }, filetypes = { "python" } }
 
       -- Enable the servers
-      local servers = { "clangd", "lua_ls", "asm_lsp", "pyright" }
+      local servers = { "clangd", "lua_ls", "asm_lsp", "pyright", "rust-analyzer" }
       for _, name in ipairs(servers) do
         if vim.lsp.config[name] then
           vim.lsp.enable(name)
@@ -89,16 +89,25 @@ vim.api.nvim_create_autocmd('LspAttach', {
   -- 3. Completion Engine (keep this from previous step)
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip" },
+    dependencies = { "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "rafamadriz/friendly-snippets"},
     config = function()
       local cmp = require("cmp")
+      local has_luasnip, luasnip = pcall(require, "luasnip")
       cmp.setup({
+
         sources = { { name = "nvim_lsp" } },
         mapping = cmp.mapping.preset.insert({
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
           ["<Tab>"] = cmp.mapping.select_next_item(),
         }),
+        snippet = {
+            expand = function(args)
+                luasnip.lsp_expand(args.body)
+            end
+        }
       })
+
+      require("luasnip.loaders.from_vscode").lazy_load()
     end,
   },
 }

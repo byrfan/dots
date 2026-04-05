@@ -73,7 +73,7 @@ return {
       },
       keys = {
         -- Setting this to open specifically as a float
-      { "<Leader>o", "<CMD>Oil --float<CR>", desc = "Open oil in a floating window" },
+          { "<Leader>o", "<CMD>Oil --float<CR>", desc = "Open oil in a floating window" },
       }
   },
   {

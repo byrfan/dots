@@ -6,7 +6,7 @@
   margin-top: 2px;
   border: none;
   margin-left: 3px;
-  margin-right: 4px;
+  margin-right: 4.5px;
 }
 
 #waybar {
@@ -16,24 +16,23 @@
 
 .modules-right {
     margin-top: 4px;
-    background-color: rgba(43, 48, 59, 0.5);
+    background-color: #28282B;
     border-radius: 8px 8px 8px 8px;
 }
 #workspaces {
   border-radius: 8px 8px 8px 8px;
-  background-color: rgba(43, 48, 59, 0.5);;
+  background-color: #28282B;;
 }
 
 #workspaces button {
   margin: 0;
-  color: #ffffff;
-  border-radius: 0px 0px 8px 0px;
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
+  color: #B8BCBC;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 #workspaces button.active {
-  color: #c7c7c7;
+  color: #ffffff;
 }
 
 button {
@@ -41,7 +40,7 @@ button {
 }
 
 #clock {
-    background-color: rgba(43, 48, 59, 0.5);
+    background-color: #28282B;
 }
 
 /* Common styles for modules */

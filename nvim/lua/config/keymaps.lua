@@ -10,9 +10,7 @@ for _, mode in ipairs(modes) do
   map(mode, "<Right>", "<nop>")
 end
 
-
-
-
+map('n', '<Esc>', ':noh<CR><Esc>', { noremap = true, silent = true })
 map("n", "<leader>n", utils.create_file_with_dir)
 
 map("n", "<leader>p", function()

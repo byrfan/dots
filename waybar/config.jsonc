@@ -26,7 +26,6 @@
         //"hyprland/language",
         "battery",
         "battery#bat2",
-        "tray",
         "custom/power"
     ],
     // Modules configuration

@@ -330,7 +330,7 @@ return {
       -- Enable the servers
       local servers = { 
           "clangd", "lua_ls", "asm_lsp", "pyright", "rust_analyzer", "ts_ls",
-          "cssls", "html", "gopls"
+          "cssls", "html", "gopls", "zls"
       }
       for _, name in ipairs(servers) do
         if vim.lsp.config[name] then

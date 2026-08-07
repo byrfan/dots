@@ -11,7 +11,7 @@
 
 #waybar {
   background: transparent;
-  color: #ffffff;
+  color: #E0E5EC;
 }
 
 .modules-right {
@@ -68,35 +68,28 @@ button {
 }
 
 #custom-power {
-  color: #ffffff;
   font-size: 26px;
 }
 
 /* Keep other modules with their original styling */
 #clock {
-  color: #ffffff;
   border-radius: 8px 8px 8px 8px;
 }
 
 #custom-weather {
-  color: #ffffff;
   border-radius: 5px;
 }
 
 #battery {
-  color: #ffffff;
 }
 
 #battery.charging {
-  color: #ffffff;
 }
 
 #battery.warning:not(.charging) {
-  color: #ffffff;
 }
 
 #backlight {
-  color: #ffffff;
 }
 
 /* Remove any remaining borders that might create visual separation */
